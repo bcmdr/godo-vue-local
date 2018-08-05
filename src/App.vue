@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TaskList />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import TaskList from "./components/TaskList.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    TaskList
   }
 };
 </script>
@@ -21,8 +20,34 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #111;
+}
+
+html {
+  min-height: 100vh;
+  background: #00b4db; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #0083b0,
+    #00b4db
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    -45deg,
+    #0083b0,
+    #00b4db
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+  margin-top: 30px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 3px;
+  padding: 10px 15px;
+  font-size: 0.8em;
+  border: none;
+  background: transparent;
 }
 </style>
