@@ -23,7 +23,8 @@ export default {
   },
   computed: {
     tasks() {
-      return this.$store.state.tasks;
+      let tasks = this.$store.state.tasks;
+      return tasks.reverse();
     }
   },
   methods: {},
