@@ -138,6 +138,9 @@ h1 {
 p {
   margin: 0;
 }
+.active .completion-time {
+  font-weight: bold;
+}
 .completion-time {
   margin-right: 15px;
   font-size: 1.5em;
