@@ -129,9 +129,6 @@ h1 {
   font-weight: normal;
   font-size: 1.5em;
 }
-.completed {
-  background: #53ad5c;
-}
 .active h1 {
   font-weight: 900;
 }
