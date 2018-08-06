@@ -80,6 +80,6 @@ input[type="text"] {
 
 button.active {
   color: white;
-  background: #2c3e50;
+  background: rgba(0, 0, 0, 0.8);
 }
 </style>

@@ -23,8 +23,7 @@ export default {
   },
   computed: {
     tasks() {
-      let tasks = this.$store.state.tasks;
-      return tasks.reverse();
+      return this.$store.state.tasks.slice().reverse();
     }
   },
   methods: {},
@@ -41,8 +40,7 @@ section {
 
 .task-items {
   display: flex;
-  display: grid;
   flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
 }
 </style>
