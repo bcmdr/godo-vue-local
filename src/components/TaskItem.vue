@@ -35,7 +35,16 @@ export default {
   props: {
     task: Object
   },
+  data() {
+    return {
+      timer: null,
+      currentDate: new Date()
+    };
+  },
   computed: {
+    startedAt() {
+      return new Date(this.task.startedAt);
+    },
     completionTime() {
       // update completion time
       if (this.task.completed === false) return null;
@@ -47,7 +56,7 @@ export default {
       return difference;
     },
     activeTime() {
-      return differenceInMinutes(new Date(), this.task.startedAt);
+      return differenceInMinutes(this.currentDate, this.startedAt);
     }
   },
   methods: {
@@ -56,12 +65,27 @@ export default {
     },
     startTask() {
       this.$store.dispatch("startTask", this.task);
+      this.updateCurrentDate();
+      this.updateDateEverySecond();
     },
     stopTask() {
       this.$store.dispatch("stopTask", this.task);
+      clearInterval(this.timer);
     },
     deleteTask() {
       this.$store.dispatch("removeTask", this.task);
+    },
+    updateCurrentDate() {
+      this.currentDate = new Date();
+    },
+    updateDateEverySecond() {
+      this.timer = setInterval(this.updateCurrentDate, 1000);
+    }
+  },
+  created() {
+    this.updateCurrentDate();
+    if (this.task.isActive) {
+      this.updateDateEverySecond();
     }
   }
 };

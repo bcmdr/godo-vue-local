@@ -25,10 +25,6 @@ export default {
     tasks() {
       return this.$store.state.tasks;
     }
-  },
-  methods: {},
-  mounted() {
-    console.log(this.tasks);
   }
 };
 </script>
