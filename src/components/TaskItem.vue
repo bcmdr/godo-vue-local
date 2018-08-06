@@ -126,7 +126,7 @@ article > section {
 }
 h1 {
   margin: 0;
-  font-weight: 900;
+  font-weight: normal;
   font-size: 1.5em;
 }
 .active h1 {
