@@ -41,7 +41,8 @@ section {
 
 .task-items {
   display: flex;
+  display: grid;
   flex-wrap: wrap;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 </style>
