@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     tasks() {
-      return this.$store.state.tasks.slice().reverse();
+      return this.$store.state.tasks.slice();
     }
   },
   methods: {},
