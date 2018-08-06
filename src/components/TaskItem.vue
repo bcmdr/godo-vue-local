@@ -52,7 +52,6 @@ export default {
         this.task.stoppedAt,
         this.task.startedAt
       );
-      difference = difference ? difference : 1; // minimum 1 minute
       return difference;
     },
     activeTime() {
