@@ -159,7 +159,7 @@ p {
   background: white;
 }
 .controls {
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
 }
 .button--start {
   color: #111;
