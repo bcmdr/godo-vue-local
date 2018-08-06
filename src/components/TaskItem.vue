@@ -6,7 +6,7 @@
     <section class="controls flex-row bottom-edge">
       <button @click="deleteTask()">&times;</button>
       <div class="flex-row">
-        <p v-if="task.isActive" class="completion-time">
+        <p v-if="task.startedAt" class="completion-time">
           {{task.isActive ? activeTime : completionTime}}<span class="unit">min</span>
         </p>
         <button 
