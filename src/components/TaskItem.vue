@@ -6,10 +6,10 @@
     <section class="controls flex-row bottom-edge">
       <button @click="deleteTask()">&times;</button>
       <div class="flex-row">
-        <p v-if="!task.isActive" class="completion-time">
+        <p v-if="!task.isActive && completionTime" class="completion-time">
           {{completionTime}}<span class="unit">min</span>
         </p>
-        <p v-else class="status">
+        <p v-else-if="task.isActive" class="status">
           Active
         </p>
         <button 
@@ -51,6 +51,7 @@ export default {
       // && new Date(this.task.stoppedAt);
     },
     completionTime() {
+      if (this.stoppedAt === null && this.startedAt === null) return null;
       let difference = differenceInMinutes(this.stoppedAt, this.startedAt);
       difference = difference ? difference : 1; // minimum 1 minute
       return difference;

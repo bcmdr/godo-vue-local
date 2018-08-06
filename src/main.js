@@ -46,9 +46,9 @@ const store = new Vuex.Store({
       commit("addTask", {
         title,
         createdAt: new Date(),
-        startedAt: new Date(),
+        startedAt: null,
         stoppedAt: null,
-        isActive: true
+        isActive: false
       });
     },
 
