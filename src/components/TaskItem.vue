@@ -167,6 +167,6 @@ p {
 }
 .button--done {
   color: white;
-  background: #53ad5c;
+  background: rgba(0, 0, 0, 0.8)
 }
 </style>
