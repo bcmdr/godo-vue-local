@@ -18,7 +18,8 @@ export default {
   methods: {
     addTask(title) {
       // Trim Whitespace and cancel if empty
-      const formattedTitle = title.trim();
+      let formattedTitle = title.trim();
+      if (!formattedTitle.includes(".")) formattedTitle = formattedTitle + "."
       if (!formattedTitle) return;
 
       this.$store.dispatch("addTask", formattedTitle);
