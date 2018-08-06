@@ -1,13 +1,13 @@
 <template>
-  <article :class="{ active: task.isActive, completed: task.stoppedAt }" class="v-stretch">
+  <article :class="{ active: task.isActive, completed: task.completed }" class="v-stretch">
     <section class="content grow top-edge flex-row">
       <h1 class="title">{{task.title}}</h1>
     </section>
     <section class="controls flex-row bottom-edge">
       <button @click="deleteTask()">&times;</button>
       <div class="flex-row">
-        <p v-if="completionTime" class="completion-time">
-          {{completionTime}}<span class="unit">min</span>
+        <p v-if="task.startedAt" class="completion-time">
+          {{task.isActive ? activeTime : completionTime}}<span class="unit">min</span>
         </p>
         <button 
           class="button--done"
@@ -35,25 +35,19 @@ export default {
   props: {
     task: Object
   },
-  data() {
-    return {
-      completionTime: null
-    };
-  },
   computed: {
-    createdAt() {
-      return this.task.createdAt.toDate();
-    },
-    startedAt() {
-      return this.task.startedAt;
-      //  && new Date(this.task.startedAt);
-    },
-    stoppedAt() {
-      return this.task.stoppedAt;
-      // && new Date(this.task.stoppedAt);
+    completionTime() {
+      // update completion time
+      if (this.task.completed === false) return null;
+      let difference = differenceInMinutes(
+        this.task.stoppedAt,
+        this.task.startedAt
+      );
+      difference = difference ? difference : 1; // minimum 1 minute
+      return difference;
     },
     activeTime() {
-      return differenceInMinutes(new Date(), this.startedAt);
+      return differenceInMinutes(new Date(), this.task.startedAt);
     }
   },
   methods: {
@@ -65,11 +59,6 @@ export default {
     },
     stopTask() {
       this.$store.dispatch("stopTask", this.task);
-
-      // update completion time
-      let difference = differenceInMinutes(new Date(), this.startedAt);
-      difference = difference ? difference : 1; // minimum 1 minute
-      this.completionTime = difference;
     },
     deleteTask() {
       this.$store.dispatch("removeTask", this.task);

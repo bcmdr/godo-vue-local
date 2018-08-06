@@ -33,12 +33,14 @@ const store = new Vuex.Store({
         task,
         isActive = task.isActive,
         startedAt = task.startedAt,
-        stoppedAt = task.stoppedAt
+        stoppedAt = task.stoppedAt,
+        completed = task.completed
       }
     ) {
       (task.isActive = isActive),
         (task.stoppedAt = stoppedAt),
-        (task.startedAt = startedAt);
+        (task.startedAt = startedAt),
+        (task.completed = completed);
     }
   },
   actions: {
@@ -48,7 +50,8 @@ const store = new Vuex.Store({
         createdAt: new Date(),
         startedAt: null,
         stoppedAt: null,
-        isActive: false
+        isActive: false,
+        completed: false
       });
     },
 
@@ -68,7 +71,8 @@ const store = new Vuex.Store({
       commit("editTask", {
         task,
         isActive: false,
-        stoppedAt: new Date()
+        stoppedAt: new Date(),
+        completed: true
       });
     }
   }
