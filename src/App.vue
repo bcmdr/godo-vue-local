@@ -3,7 +3,7 @@
     <TaskAdd />
     <TaskList />
     <section class="footer">
-      GoDo © 2018 Brett Commandeur | <a href="https://github.com/bcmdr/Godo-Local">Version 0.1.0</a>
+      GoDo © 2018 <a href="twitter.com/bcmdr">Brett Commandeur</a> | <a href="https://github.com/bcmdr/Godo-Local">Version 0.1.0</a>
     </section>
   </div>
 </template>
