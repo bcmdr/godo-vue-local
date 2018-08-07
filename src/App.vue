@@ -2,6 +2,9 @@
   <div id="app">
     <TaskAdd />
     <TaskList />
+    <section class="footer">
+      GoDo © 2018 Brett Commandeur | <a href="https://github.com/bcmdr/Godo-Local">Version 0.1.0</a>
+    </section>
   </div>
 </template>
 
@@ -20,13 +23,8 @@ export default {
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding-top: 30px;
   color: #111;
-}
-
-html {
   min-height: 100vh;
   background: #00b4db; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -41,9 +39,34 @@ html {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 body {
-  margin-top: 30px;
-  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100%;
 }
 
 button {
@@ -56,5 +79,15 @@ button {
 }
 button:active {
   box-shadow: inset 0 0 5px rgb(0, 0, 0);
+}
+.footer {
+  font-size: 0.8rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  bottom: 10px;
+  text-align: center;
 }
 </style>
