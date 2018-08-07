@@ -44,6 +44,7 @@ body {
 }
 
 button {
+  cursor: pointer;
   border-radius: 3px;
   padding: 10px 15px;
   font-size: 0.8em;
