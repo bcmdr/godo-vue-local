@@ -2,9 +2,12 @@
   <article :class="{ active: task.isActive, completed: task.completed }" class="v-stretch">
     <section class="content grow top-edge flex-row">
       <h1 class="title">{{task.title}}</h1>
+      <p :class="{ invisible: !task.completed || task.isActive }" class="reward">👍</p>
     </section>
     <section class="controls flex-row bottom-edge">
+      <div class="flex-row">
       <button @click="deleteTask()">&times;</button>
+      </div>
       <div class="flex-row">
         <p v-if="task.startedAt" class="completion-time">
           {{task.isActive ? activeTime : completionTime}}<span class="unit">min</span>
@@ -19,7 +22,7 @@
           class="button--start"
           v-if="!task.isActive"
           @click="startTask()">
-          Start
+          Again
         </button>
       </div>
     </section>
@@ -91,6 +94,9 @@ export default {
 </script>
 
 <style scoped>
+.invisible {
+  visibility: hidden;
+}
 .grow {
   flex-grow: 1;
 }
@@ -114,6 +120,7 @@ article {
   max-width: 360px;
   background: transparent;
   box-sizing: border-box;
+  border-radius: 3px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 article > section {
@@ -127,6 +134,9 @@ article > section {
 h1 {
   margin: 0;
   font-weight: normal;
+  font-size: 1.5em;
+}
+.reward {
   font-size: 1.5em;
 }
 .active h1 {
@@ -156,10 +166,10 @@ p {
 }
 .content {
   padding: 30px;
-  background: white;
+  background: rgb(255, 255, 255);
 }
 .controls {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
 }
 .button--start {
   color: #111;

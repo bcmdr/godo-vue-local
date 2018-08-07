@@ -1,8 +1,8 @@
 <template>
 <div class="task-add">
-  <form @submit.prevent="addTask(title)">
-    <input type="text" v-model="title" placeholder="Get Started">
-    <button type="submit" :class="{ active: title }">Add</button>
+  <form @submit.prevent="addTask()">
+    <input type="text" v-model="title" placeholder="Get Started" class="go-input">
+    <button @click.prevent="handleSubmitClick" type="submit" :class="{ active: title }">Go</button>
   </form>
 </div>
 </template>
@@ -16,38 +16,21 @@ export default {
     };
   },
   methods: {
+    handleSubmitClick() {
+      if (this.title) {
+        this.addTask();
+      } else {
+        document.querySelector(".go-input").focus();
+      }
+    },
     addTask(title) {
       // Trim Whitespace and cancel if empty
-      let formattedTitle = title.trim();
-      if (!formattedTitle.includes(".")) formattedTitle = formattedTitle + "."
+      let formattedTitle = this.title.trim();
       if (!formattedTitle) return;
+      if (!formattedTitle.includes(".")) formattedTitle = formattedTitle + ".";
 
       this.$store.dispatch("addTask", formattedTitle);
 
-      // Create Task Fields
-      // const createdAt = Date.now();
-      // const startedAt = createdAt;
-      // const stoppedAt = null;
-      // const isStarted = true;
-      // const _id = uuid();
-
-      // const taskIds = localStorage.getObject("taskIds");
-      // const newTaskIds = taskIds.concat(_id);
-      // localStorage.setObject("taskIds", newTaskIds);
-
-      // const task = {
-      //   title: formattedTitle,
-      //   createdAt,
-      //   startedAt,
-      //   stoppedAt,
-      //   isStarted,
-      //   _id
-      // };
-
-      // Save the Task
-      // localStorage.setObject(_id, task);
-
-      // Reset Fields
       this.title = "";
     }
   }
