@@ -48,10 +48,11 @@ const store = new Vuex.Store({
       commit("addTask", {
         title,
         createdAt: new Date(),
-        startedAt: new Date(),
+        startedAt: null,
         stoppedAt: null,
-        isActive: true,
-        completed: false
+        isActive: false,
+        completed: false,
+        times: 0
       });
     },
 
@@ -68,11 +69,13 @@ const store = new Vuex.Store({
     },
 
     stopTask({ commit }, task) {
+      task.times = task.times + 1;
       commit("editTask", {
         task,
         isActive: false,
         stoppedAt: new Date(),
-        completed: true
+        completed: true,
+        times: task.times
       });
     }
   }

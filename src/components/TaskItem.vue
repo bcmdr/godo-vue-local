@@ -8,7 +8,7 @@
       <button @click="deleteTask()">&times;</button>
       </div>
       <div class="flex-row">
-        <p v-if="!task.isActive && task.stoppedAt" class="reward">👍</p>
+        <p v-if="task.stoppedAt" class="reward">👍<span v-if="task.times > 1" class="reward-times">x{{task.times}}</span></p>
         <p v-if="task.startedAt" class="completion-time">
           {{task.isActive ? activeTime : completionTime}}<span class="unit">min</span>
         </p>
@@ -153,12 +153,16 @@ h1 {
 p {
   margin: 0;
 }
-.active .completion-time {
+.active {
   font-weight: bold;
 }
 .completion-time {
   margin-right: 15px;
   font-size: 1.5em;
+}
+.reward-times {
+  margin-left: 2px;
+  font-size: 0.5em;
 }
 .unit {
   margin-left: 2px;
