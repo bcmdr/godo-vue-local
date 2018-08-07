@@ -90,6 +90,6 @@ button:active {
   width: 100%;
   bottom: 10px;
   text-align: center;
-  padding-bottom: 10px;
+  padding-top: 30px;
 }
 </style>
