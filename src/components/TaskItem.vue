@@ -20,7 +20,13 @@
         </button>
         <button 
           class="button--start"
-          v-if="!task.isActive"
+          v-if="!task.isActive && !task.completed"
+          @click="startTask()">
+          Start
+        </button>
+        <button 
+          class="button--start"
+          v-if="!task.isActive && task.completed"
           @click="startTask()">
           Again
         </button>
