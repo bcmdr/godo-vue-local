@@ -2,13 +2,13 @@
   <article :class="{ active: task.isActive, completed: task.completed }" class="v-stretch">
     <section class="content grow top-edge flex-row">
       <h1 class="title">{{task.title}}</h1>
-      <p :class="{ invisible: !task.completed || task.isActive }" class="reward">👍</p>
     </section>
     <section class="controls flex-row bottom-edge">
       <div class="flex-row">
       <button @click="deleteTask()">&times;</button>
       </div>
       <div class="flex-row">
+        <p v-if="!task.isActive && task.stoppedAt" class="reward">👍</p>
         <p v-if="task.startedAt" class="completion-time">
           {{task.isActive ? activeTime : completionTime}}<span class="unit">min</span>
         </p>
@@ -138,6 +138,8 @@ h1 {
 }
 .reward {
   font-size: 1.5em;
+  margin-left: 30px;
+  margin-right: 15px;
 }
 .active h1 {
   font-weight: 900;
@@ -151,7 +153,6 @@ p {
 .completion-time {
   margin-right: 15px;
   font-size: 1.5em;
-  text-align: right;
 }
 .unit {
   margin-left: 2px;
@@ -172,8 +173,8 @@ p {
   background: rgba(255, 255, 255, 0.5);
 }
 .button--start {
-  color: #111;
-  background: white;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
 }
 .button--done {
   color: white;
