@@ -50,4 +50,7 @@ button {
   border: none;
   background: transparent;
 }
+button:active {
+  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+}
 </style>
