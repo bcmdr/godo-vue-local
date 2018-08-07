@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <TaskAdd />
-    <TaskList />
+    <section class="top">
+      <TaskAdd />
+      <TaskList />
+    </section>
     <section class="footer">
-      GoDo © 2018 <a href="twitter.com/bcmdr">Brett Commandeur</a> | <a href="https://github.com/bcmdr/Godo-Local">Version 0.1.0</a>
+      GoDo © 2018 <a href="twitter.com/bcmdr">Brett Commandeur</a> | <a href="https://github.com/bcmdr/Godo-Local">Version 0.1.1</a>
     </section>
   </div>
 </template>
@@ -23,6 +25,9 @@ export default {
 
 <style>
 #app {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
   padding-top: 30px;
   color: #111;
   min-height: 100vh;
@@ -82,12 +87,9 @@ button:active {
 }
 .footer {
   font-size: 0.8rem;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
   width: 100%;
   bottom: 10px;
   text-align: center;
+  padding-bottom: 10px;
 }
 </style>
