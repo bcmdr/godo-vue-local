@@ -64,7 +64,7 @@ export default {
       return difference;
     },
     activeTime() {
-      return differenceInMinutes(this.currentDate, this.startedAt);
+      return differenceInMinutes(this.currentDate, this.task.startedAt);
     }
   },
   methods: {
@@ -91,7 +91,6 @@ export default {
     }
   },
   created() {
-    this.updateCurrentDate();
     if (this.task.isActive) {
       this.updateDateEverySecond();
     }
