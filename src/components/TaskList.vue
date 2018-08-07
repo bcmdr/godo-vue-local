@@ -1,6 +1,5 @@
 <template>
   <div class="task-list">
-    <TaskAdd />
     <section class="task-items">
       <TaskItem
         v-for="(task, id) in tasks"

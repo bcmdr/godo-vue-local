@@ -180,7 +180,7 @@ p {
   background: rgb(255, 255, 255);
 }
 .controls {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
 }
 .button--start {
   color: white;

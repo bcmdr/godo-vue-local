@@ -23,7 +23,7 @@ export default {
         document.querySelector(".go-input").focus();
       }
     },
-    addTask(title) {
+    addTask() {
       // Trim Whitespace and cancel if empty
       let formattedTitle = this.title.trim();
       if (!formattedTitle) return;
