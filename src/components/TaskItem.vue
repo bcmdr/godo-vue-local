@@ -183,11 +183,11 @@ p {
   background: rgba(255, 255, 255, 0.8);
 }
 .button--start {
-  color: white;
-  background: rgba(0, 0, 0, 0.8);
+  color: #111;
+  background: rgba(255, 255, 255, 1);
 }
 .button--done {
   color: white;
-  background: rgb(63, 180, 52);
+  background: rgba(0, 0, 0, 0.8);
 }
 </style>
