@@ -11,18 +11,16 @@
 </template>
 
 <script>
-import TaskAdd from "@/components/TaskAdd.vue";
 import TaskItem from "@/components/TaskItem.vue";
 
 export default {
   name: "TaskList",
   components: {
-    TaskAdd,
     TaskItem
   },
   computed: {
     tasks() {
-      return this.$store.state.tasks.slice().reverse();
+      return this.$store.state.tasks.slice();
     }
   }
 };

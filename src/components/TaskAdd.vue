@@ -27,7 +27,6 @@ export default {
       // Trim Whitespace and cancel if empty
       let formattedTitle = this.title.trim();
       if (!formattedTitle) return;
-      if (!formattedTitle.includes(".")) formattedTitle = formattedTitle + ".";
 
       this.$store.dispatch("addTask", formattedTitle);
 
