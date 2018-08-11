@@ -5,7 +5,7 @@
     </section>
     <section class="controls flex-row bottom-edge">
       <div class="flex-row">
-      <button @click="deleteTask()">&times;</button>
+      <button class="button--delete" @click="deleteTask()">Clear</button>
       </div>
       <div class="flex-row">
         <p v-if="task.stoppedAt" class="reward">👍<span v-if="task.times > 1" class="reward-times">x{{task.times}}</span></p>
@@ -16,7 +16,7 @@
           class="button--done"
           v-if="task.isActive"
           @click="stopTask()">
-          Done
+          Done 
         </button>
         <button 
           class="button--start"
@@ -189,5 +189,8 @@ p {
 .button--done {
   color: white;
   background: rgba(0, 0, 0, 0.8);
+}
+.button--delete {
+  background: white;
 }
 </style>
