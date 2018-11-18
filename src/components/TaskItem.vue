@@ -1,5 +1,5 @@
 <template>
-  <article :class="{ active: task.isActive, completed: task.completed }" class="v-stretch">
+  <article :class="{ active: task.isActive, completed: task.completed }">
     <section class="content grow top-edge flex-row">
       <h1 class="title">{{task.title}}</h1>
     </section>
@@ -106,11 +106,6 @@ export default {
 .grow {
   flex-grow: 1;
 }
-.v-stretch {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .top-edge {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -120,10 +115,12 @@ export default {
   border-bottom-right-radius: 3px;
 }
 article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-grow: 1;
-  margin: 10px;
-  min-width: 240px;
   max-width: 360px;
+  margin: 10px;
   background: transparent;
   box-sizing: border-box;
   border-radius: 3px;

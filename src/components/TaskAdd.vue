@@ -1,7 +1,7 @@
 <template>
 <div class="task-add">
   <form @submit.prevent="addTask()">
-    <input type="text" v-model="title" placeholder="Get Started" class="go-input">
+    <input type="text" v-model="title" placeholder="Get started..." class="go-input">
     <button @click.prevent="handleSubmitClick" type="submit" :class="{ active: title }">Add</button>
   </form>
 </div>
@@ -44,7 +44,7 @@ export default {
 
 form {
   display: flex;
-  padding: 8px;
+  padding: 10px;
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 3px;
@@ -64,5 +64,11 @@ input[type="text"] {
 button.active {
   color: white;
   background: rgba(0, 0, 0, 0.8);
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 10px;
+  border: 1px solid rgba(81, 203, 238, 1);
 }
 </style>
