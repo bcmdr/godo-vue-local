@@ -20,7 +20,15 @@ export default {
   },
   computed: {
     tasks() {
+      // return shallow copy of state tasks
       return this.$store.state.tasks.slice();
+    }
+  },
+  created() {
+    const storedTasks = this.$store.state.tasks.slice();
+
+    if (storedTasks.length === 0) {
+      this.$store.dispatch("addTask", "Add a Task to Focus On");
     }
   }
 };

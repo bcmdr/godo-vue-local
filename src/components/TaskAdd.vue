@@ -1,7 +1,7 @@
 <template>
 <div class="task-add">
   <form @submit.prevent="addTask()">
-    <input type="text" v-model="title" placeholder="Get started..." class="go-input">
+    <input type="text" v-model="title" placeholder="New task..." class="go-input">
     <button @click.prevent="handleSubmitClick" type="submit" :class="{ active: title }">Add</button>
   </form>
 </div>
