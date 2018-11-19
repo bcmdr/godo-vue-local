@@ -5,7 +5,7 @@
       <TaskList />
     </section>
     <section class="footer">
-      GoDo © 2018 <a href="twitter.com/bcmdr">Brett Commandeur</a> | <a href="https://github.com/bcmdr/godo">Version 1.1.1</a>
+      GoDo © 2018 <a href="https://twitter.com/bcmdr">Brett Commandeur</a> | <a href="https://github.com/bcmdr/godo">Version 1.1.1</a>
     </section>
   </div>
 </template>
