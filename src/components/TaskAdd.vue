@@ -28,8 +28,10 @@ export default {
       let formattedTitle = this.title.trim();
       if (!formattedTitle) return;
 
+      // Add task to state and storage
       this.$store.dispatch("addTask", formattedTitle);
 
+      // clear the new task field
       this.title = "";
     }
   }
