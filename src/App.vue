@@ -7,7 +7,7 @@
     <section class="footer">
       GoDo © 2019
       <a href="https://twitter.com/bcmdr">Brett Commandeur</a> |
-      <a href="https://github.com/bcmdr/godo-vue-local">Version 1.1.1</a>
+      <a href="https://github.com/bcmdr/godo-vue-local">Version 1.1.2</a>
     </section>
   </div>
 </template>

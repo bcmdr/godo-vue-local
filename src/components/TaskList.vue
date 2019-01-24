@@ -1,11 +1,7 @@
 <template>
   <div class="task-list">
     <section class="task-items">
-      <TaskItem
-        v-for="(task, id) in tasks"
-        :key="id"
-        :task="task"
-      />
+      <TaskItem v-for="(task, id) in tasks" :key="id" :task="task"/>
     </section>
   </div>
 </template>
@@ -28,7 +24,7 @@ export default {
     const storedTasks = this.$store.state.tasks.slice();
 
     if (storedTasks.length === 0) {
-      this.$store.dispatch("addTask", "Add a Task to Focus On");
+      this.$store.dispatch("addTask", "Add a task to focus on...");
     }
   }
 };
