@@ -88,10 +88,20 @@ button:active {
   box-shadow: inset 0 0 5px rgb(0, 0, 0);
 }
 .footer {
+  color: white;
+  background: #111;
   font-size: 0.8rem;
   width: 100%;
   bottom: 10px;
   text-align: center;
-  padding-top: 30px;
+  padding: 15px;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 </style>
