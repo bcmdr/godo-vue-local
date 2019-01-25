@@ -1,4 +1,4 @@
-# godo-local
+# godo-vue-local
 
 ## Project setup
 ```
