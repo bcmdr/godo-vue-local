@@ -70,7 +70,7 @@ input[type="text"] {
 
 button.active {
   color: white;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 input[type="text"]:focus {

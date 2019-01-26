@@ -1,35 +1,32 @@
 <template>
   <article :class="{ active: task.isActive, completed: task.completed }">
     <section class="content grow top-edge flex-row">
-      <h1 class="title">{{task.title}}</h1>
+      <h2 class="title">{{task.title}}</h2>
     </section>
     <section class="controls flex-row bottom-edge">
       <div class="flex-row">
-      <button class="button--delete" @click="deleteTask()">Clear</button>
+        <button class="button--delete" @click="deleteTask()">Clear</button>
       </div>
       <div class="flex-row">
-        <p v-if="task.stoppedAt" class="reward">👍<span v-if="task.times > 1" class="reward-times">x{{task.times}}</span></p>
-        <p v-if="task.startedAt" class="completion-time">
-          {{task.isActive ? activeTime : completionTime}}<span class="unit">min</span>
+        <p v-if="task.stoppedAt" class="reward">
+          👍
+          <span v-if="task.times > 1" class="reward-times">x{{task.times}}</span>
         </p>
-        <button 
-          class="button--done"
-          v-if="task.isActive"
-          @click="stopTask()">
-          Done 
-        </button>
-        <button 
+        <p v-if="task.startedAt" class="completion-time">
+          {{task.isActive ? activeTime : completionTime}}
+          <span class="unit">min</span>
+        </p>
+        <button class="button--done" v-if="task.isActive" @click="stopTask()">Done</button>
+        <button
           class="button--start"
           v-if="!task.isActive && !task.completed"
-          @click="startTask()">
-          Start
-        </button>
-        <button 
+          @click="startTask()"
+        >Start</button>
+        <button
           class="button--start"
           v-if="!task.isActive && task.completed"
-          @click="startTask()">
-          Again
-        </button>
+          @click="startTask()"
+        >Again</button>
       </div>
     </section>
   </article>
@@ -134,7 +131,7 @@ article > section {
   justify-content: space-between;
   align-items: center;
 }
-h1 {
+h2 {
   margin: 0;
   font-weight: normal;
   font-size: 1.5em;
@@ -144,7 +141,7 @@ h1 {
   margin-left: 30px;
   margin-right: 15px;
 }
-.active h1 {
+.active h2 {
   font-weight: 900;
 }
 p {
@@ -180,12 +177,11 @@ p {
   background: rgba(255, 255, 255, 0.8);
 }
 .button--start {
-  color: #111;
-  background: rgba(255, 255, 255, 1);
+  background: white;
 }
 .button--done {
   color: white;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
 }
 .button--delete {
   background: white;

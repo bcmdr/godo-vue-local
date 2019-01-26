@@ -31,7 +31,7 @@ export default {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  color: #111;
+  color: #000;
   min-height: 100vh;
   background: #00b4db; /* fallback for old browsers */
   background: -webkit-linear-gradient(
