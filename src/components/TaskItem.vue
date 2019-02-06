@@ -5,7 +5,7 @@
     </section>
     <section class="controls flex-row bottom-edge">
       <div class="flex-row">
-        <button class="button--delete" @click="deleteTask()">Clear</button>
+        <button class="button--delete" @click="deleteTask()">Remove</button>
       </div>
       <div class="flex-row">
         <p v-if="task.stoppedAt" class="reward">
@@ -14,7 +14,6 @@
         </p>
         <p v-if="task.startedAt" class="completion-time">
           <span class="value">{{task.isActive ? activeTime : completionTime}}</span>
-          <span class="value__modifier"></span>
           <span class="unit">min</span>
         </p>
         <button class="button--done" v-if="task.isActive" @click="stopTask()">Done</button>
@@ -168,7 +167,8 @@ p {
   font-size: 0.5em;
 }
 .value {
-  margin-right: 0px;
+  margin-right: 0.2rem;
+  letter-spacing: -0.1rem;
 }
 .status {
   font-size: 0.8em;
