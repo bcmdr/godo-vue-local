@@ -9,11 +9,12 @@
       </div>
       <div class="flex-row">
         <p v-if="task.stoppedAt" class="reward">
-          👍
+          <span class="value">👍</span>
           <span v-if="task.times > 1" class="reward-times">x{{task.times}}</span>
         </p>
         <p v-if="task.startedAt" class="completion-time">
-          {{task.isActive ? activeTime : completionTime}}
+          <span class="value">{{task.isActive ? activeTime : completionTime}}</span>
+          <span class="value__modifier"></span>
           <span class="unit">min</span>
         </p>
         <button class="button--done" v-if="task.isActive" @click="stopTask()">Done</button>
@@ -59,10 +60,16 @@ export default {
         this.task.startedAt
       );
       difference = difference > 0 ? difference : 1; // minimum 1 minute
+      difference = difference <= 60 ? difference : "60+"; // maximum 60 minutes
       return difference;
     },
     activeTime() {
-      return differenceInMinutes(this.currentDate, this.task.startedAt);
+      let difference = differenceInMinutes(
+        this.currentDate,
+        this.task.startedAt
+      );
+      difference = difference <= 60 ? difference : "60+"; // maximum 60 minutes
+      return difference;
     }
   },
   methods: {
@@ -155,12 +162,13 @@ p {
   font-size: 1.5em;
 }
 .reward-times {
-  margin-left: 2px;
   font-size: 0.5em;
 }
 .unit {
-  margin-left: 2px;
   font-size: 0.5em;
+}
+.value {
+  margin-right: 0px;
 }
 .status {
   font-size: 0.8em;
@@ -177,11 +185,11 @@ p {
   background: rgba(255, 255, 255, 0.8);
 }
 .button--start {
-  background: white;
-}
-.button--done {
   color: white;
   background: rgba(0, 0, 0, 0.9);
+}
+.button--done {
+  background: white;
 }
 .button--delete {
   background: white;
