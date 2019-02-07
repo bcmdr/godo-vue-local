@@ -185,11 +185,11 @@ p {
   background: rgba(255, 255, 255, 0.8);
 }
 .button--start {
-  color: white;
-  background: rgba(0, 0, 0, 0.9);
+  background: white;
 }
 .button--done {
-  background: white;
+  color: white;
+  background: rgba(0, 0, 0, 0.9);
 }
 .button--delete {
   background: white;
